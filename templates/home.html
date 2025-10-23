@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>Halaman Home</title>
+{% endblock %}
+{% block body %}
+<h1>Halaman Home</h1>
+<div class="mb-3">
+  <a href="/logout" class="btn btn-primary">Logout</a>
+</div>
+
+<!-- tabel Bootstrap -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Email</th>
+      <th scope="col">Alamat</th>
+      <th scope="col">NoTelepon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- looping baris data -->
+    {% for row in users %}
+    <tr>
+      <th scope="row">{{ row.0 }}</th>
+      <td>{{ row.1 }}</td>
+      <td>{{ row.2 }}</td>
+      <td>{{ row.3 }}</td>
+      <td>{{ row.4 }}</td>
+      <td>{{ row.5 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
